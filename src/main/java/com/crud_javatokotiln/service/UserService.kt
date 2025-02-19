@@ -15,11 +15,11 @@ open class UserService(
     private val userRepository: UserRepository
 ) {
 
-    fun findAll(): List<User> = userRepository.findAll().filterNotNull()
+    fun findAll(): List<User> = userRepository.findAll()
 
     fun findById(id: Long): User =
         userRepository.findById(id)
-            .orElseThrow { NotFoundException("User not found with id: $id") }!!
+            .orElseThrow { NotFoundException("User not found with id: $id") }
 
     @Transactional
     open fun create(userDto: UserDto): User {

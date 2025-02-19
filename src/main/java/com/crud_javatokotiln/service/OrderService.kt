@@ -17,11 +17,11 @@ open class OrderService(
     private val productRepository: ProductRepository
 ) {
 
-    fun findAll(): List<Order> = orderRepository.findAll().filterNotNull()
+    fun findAll(): List<Order> = orderRepository.findAll()
 
     fun findById(id: Long): Order =
         orderRepository.findById(id)
-            .orElseThrow { NotFoundException("Order not found with id: $id") }!!
+            .orElseThrow { NotFoundException("Order not found with id: $id") }
 
     @Transactional
     open fun create(orderDto: OrderDto): Order {

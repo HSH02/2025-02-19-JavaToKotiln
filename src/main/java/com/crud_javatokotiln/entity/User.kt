@@ -15,8 +15,10 @@ class User(
     @Schema(description = "사용자 이메일", example = "hong@example.com")
     var email: String = ""
 ) : BaseEntity(id) {
-    constructor(Name: String, Email: String) : this() {
-        this.name = Name
-        this.email = Email
+
+    constructor(name: String, email: String) : this() {
+        this.name = name
+        this.email = email
     }
+
 }

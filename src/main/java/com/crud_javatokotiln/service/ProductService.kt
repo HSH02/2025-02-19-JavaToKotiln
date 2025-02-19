@@ -13,11 +13,11 @@ open class ProductService(
     private val productRepository: ProductRepository
 ) {
 
-    fun findAll(): List<Product> = productRepository.findAll().filterNotNull()
+    fun findAll(): List<Product> = productRepository.findAll()
 
     fun findById(id: Long): Product =
         productRepository.findById(id)
-            .orElseThrow { NotFoundException("Product not found with id: $id") }!!
+            .orElseThrow { NotFoundException("Product not found with id: $id") }
 
     @Transactional
     open fun create(productDto: ProductDto): Product {
