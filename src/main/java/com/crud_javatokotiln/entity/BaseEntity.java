@@ -14,7 +14,7 @@ public abstract class BaseEntity extends BaseTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id; // TODO private로
 
     public BaseEntity() {}
 
