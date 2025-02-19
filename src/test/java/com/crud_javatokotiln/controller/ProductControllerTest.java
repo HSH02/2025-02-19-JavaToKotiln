@@ -100,7 +100,7 @@ class ProductControllerTest {
 
     @Test
     void deleteProduct() throws Exception {
-        Mockito.doNothing().when(productService).delete(1L);
+        Mockito.doNothing().when(productService).deleteById(1L);
 
         mockMvc.perform(delete("/products/1"))
                 .andExpect(status().isNoContent());

@@ -52,7 +52,7 @@ public class ProductController {
     @Operation(summary = "상품 삭제", description = "ID에 해당하는 상품을 삭제합니다.")
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse<Void>> deleteProduct(@PathVariable Long id) {
-        productService.delete(id);
+        productService.deleteById(id);
         return new ResponseEntity<>(ApiResponse.ok(null), HttpStatus.NO_CONTENT);
     }
 }

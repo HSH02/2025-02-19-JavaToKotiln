@@ -1,6 +1,5 @@
 package com.crud_javatokotiln.service
 
-
 import com.crud_javatokotiln.dto.OrderDto
 import com.crud_javatokotiln.entity.Order
 import com.crud_javatokotiln.exception.NotFoundException
@@ -18,9 +17,9 @@ open class OrderService(
     private val productRepository: ProductRepository
 ) {
 
-    open fun findAll(): List<Order> = orderRepository.findAll().filterNotNull()
+    fun findAll(): List<Order> = orderRepository.findAll().filterNotNull()
 
-    open fun findById(id: Long): Order =
+    fun findById(id: Long): Order =
         orderRepository.findById(id)
             .orElseThrow { NotFoundException("Order not found with id: $id") }!!
 
